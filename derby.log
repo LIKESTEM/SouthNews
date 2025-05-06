@@ -1,0 +1,37 @@
+Tue May 06 14:29:23 CAT 2025 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue May 06 14:30:40 CAT 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0196-a592-8051-00003359cc08 
+on database directory C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews\SouthNewsDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_111/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_111-b14
+user.dir=C:\Program Files\Java\jdk1.8.0_111\db
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue May 06 14:30:41 CAT 2025:
+Shutting down instance a816c00e-0196-a592-8051-00003359cc08 on database directory C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews\SouthNewsDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+Tue May 06 14:30:41 CAT 2025 Thread[DRDAConnThread_2,5,main] (DATABASE = SouthNewsDB), (DRDAID = {2}), Database 'SouthNewsDB' shutdown.
+----------------------------------------------------------------
+Tue May 06 14:30:47 CAT 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance 0ddd00a9-0196-a592-8051-00003359cc08 
+on database directory C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews\SouthNewsDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_111/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_111-b14
+user.dir=C:\Program Files\Java\jdk1.8.0_111\db
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Tue May 06 14:39:38 CAT 2025: Shutting down Derby engine
+----------------------------------------------------------------
+Tue May 06 14:39:38 CAT 2025:
+Shutting down instance 0ddd00a9-0196-a592-8051-00003359cc08 on database directory C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews\SouthNewsDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
+----------------------------------------------------------------
