@@ -4,13 +4,81 @@
         <servlet-name>EndSessionServlet</servlet-name>
         <servlet-class>com.southnews.web.EndSessionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.southnews.web.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.southnews.web.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ArticleServlet</servlet-name>
+        <servlet-class>com.southnews.web.ArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PostArticleServlet</servlet-name>
+        <servlet-class>com.southnews.web.PostArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ApproveArticleServlet</servlet-name>
+        <servlet-class>com.southnews.web.ApproveArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDashboardServlet</servlet-name>
+        <servlet-class>com.southnews.web.AdminDashboardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewArticleServlet</servlet-name>
+        <servlet-class>com.southnews.web.ViewArticleServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CommentServlet</servlet-name>
+        <servlet-class>com.southnews.web.CommentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>EndSessionServlet</servlet-name>
         <url-pattern>/EndSessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ArticleServlet</servlet-name>
+        <url-pattern>/ArticleServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PostArticleServlet</servlet-name>
+        <url-pattern>/PostArticleServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApproveArticleServlet</servlet-name>
+        <url-pattern>/ApproveArticleServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDashboardServlet</servlet-name>
+        <url-pattern>/AdminDashboardServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewArticleServlet</servlet-name>
+        <url-pattern>/ViewArticleServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CommentServlet</servlet-name>
+        <url-pattern>/CommentServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/unauth_access.jsp</location>
+    </error-page>
 </web-app>
