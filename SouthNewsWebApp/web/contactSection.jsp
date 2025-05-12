@@ -16,7 +16,7 @@
             <h2 class="text-center mb-5 fw-bold">Contact Us</h2>
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-10 col-lg-8">
-                    <form action="sendContactForm" method="POST">
+                    <form action="SendContactFormServlet.do" method="POST">
                         <div class="mb-3">
                             <label for="name" class="form-label">Your Name</label>
                             <input type="text" class="form-control" id="name" name="name" required>

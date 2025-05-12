@@ -10,6 +10,7 @@ import com.southnews.entities.Role;
 import com.southnews.entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,6 +25,25 @@ public class RegisterServlet extends HttpServlet {
 
     @EJB
     private UserFacadeLocal ufl;
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        List<User> list = ufl.findAll();
+        
+        if(list == null || list.isEmpty()) {
+            String username = "Thabiso";
+            String email = "maxride2425@gamil.com";
+            String cellNo = "0638165250";
+            String password = "password@admin";
+            Role role = Role.ADMIN;
+
+            User user = new User(username, email, cellNo, password, role);
+            ufl.create(user);
+        }
+        
+        response.sendRedirect("login.jsp");
+    }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

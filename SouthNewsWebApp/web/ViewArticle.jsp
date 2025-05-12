@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ViewArticle
-    Created on : 11 May 2025, 4:17:18 PM
-    Author     : thabi
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="com.southnews.entities.Article, com.southnews.entities.Comment, java.util.List" %>
 <%@ page session="true" %>
@@ -14,35 +8,66 @@
 %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%=article.getTitle()%></title>
-    </head>
-    <body>
-        <h2><%= article.getTitle() %></h2>
-        <p><%= article.getContent() %></p>
-        <p><em>Category:</em> <%= article.getCategory().getName() %> | 
-           <em>Author:</em> <%= article.getAuthor().getUsername() %> | 
-           <em>Date:</em> <%= article.getCreatedAt() %></p>
+<head>
+    <meta charset="UTF-8">
+    <title><%=article.getTitle()%></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <jsp:include page="NavBar.jsp" />
 
-        <hr>
-        <h3>Comments</h3>
-        <%
-            for (Comment c : comments) {
-        %>
-            <p><strong><%= c.getUser().getUsername() %>:</strong> <%= c.getContent() %></p>
-        <%
-            }
-        %>
+    <div class="container py-5" style="padding-top: 12rem;">
+        <!-- Article Section -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title"><%= article.getTitle() %></h2>
+                <p class="card-text"><%= article.getContent() %></p>
+                <p class="text-muted small">
+                    <strong>Category:</strong> <%= article.getCategory().getName() %> |
+                    <strong>Author:</strong> <%= article.getAuthor().getUsername() %> |
+                    <strong>Date:</strong> <%= article.getCreatedAt() %>
+                </p>
+            </div>
+        </div>
 
+        <!-- Comments Section -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Comments</h4>
+                <% if (comments != null && !comments.isEmpty()) { %>
+                    <% for (Comment c : comments) { %>
+                        <div class="mb-3 border-bottom pb-2">
+                            <strong><%= c.getUser().getUsername() %>:</strong>
+                            <p class="mb-0"><%= c.getContent() %></p>
+                        </div>
+                    <% } %>
+                <% } else { %>
+                    <p class="text-muted">No comments yet. Be the first to comment!</p>
+                <% } %>
+            </div>
+        </div>
+
+        <!-- Comment Form -->
         <% if (user != null) { %>
-            <form action="CommentServlet.do" method="post">
-                <input type="hidden" name="articleId" value="<%= article.getId() %>"/>
-                <textarea name="content" rows="4" cols="60" required></textarea><br/>
-                <input type="submit" value="Post Comment"/>
-            </form>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Leave a Comment</h5>
+                    <form action="CommentServlet.do" method="post">
+                        <input type="hidden" name="articleId" value="<%= article.getId() %>"/>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Comment</label>
+                            <textarea class="form-control" name="content" id="content" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post Comment</button>
+                    </form>
+                </div>
+            </div>
         <% } else { %>
-            <p><a href="login.jsp">Login</a> to comment.</p>
+            <div class="alert alert-info">
+                <a href="login.jsp" class="alert-link">Login</a> to comment.
+            </div>
         <% } %>
-    </body>
+    </div>
+
+</body>
 </html>

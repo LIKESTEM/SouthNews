@@ -28,5 +28,8 @@
 
         <!-- Include Map Section -->
         <jsp:include page="mapSection.jsp"/>
+        
+        <!-- Footer Section -->
+        <jsp:include page="footer_section.jsp" />
     </body>
 </html>

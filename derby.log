@@ -1,7 +1,7 @@
-Sun May 11 10:53:26 CAT 2025 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
+Mon May 12 20:51:29 CAT 2025 : Apache Derby Network Server - 10.11.1.2 - (1629631) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Sun May 11 10:53:38 CAT 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0196-be8c-96c9-00003359cc08 
+Mon May 12 20:51:40 CAT 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-0196-c5d6-7a20-00003359cc08 
 on database directory C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews\SouthNewsDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
 Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_111/db/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -13,8 +13,4 @@ os.version=10.0
 derby.system.home=C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Sun May 11 18:24:58 CAT 2025: Shutting down Derby engine
-----------------------------------------------------------------
-Sun May 11 18:24:58 CAT 2025:
-Shutting down instance a816c00e-0196-be8c-96c9-00003359cc08 on database directory C:\Users\thabi\OneDrive\Desktop\2025\Semeter 1 - Redo\INT316D\2025 Homework - Mini Project\SouthNews\SouthNewsDB with class loader sun.misc.Launcher$AppClassLoader@6f94fa3e 
-----------------------------------------------------------------
+Tue May 13 01:56:44 CAT 2025: Shutting down Derby engine

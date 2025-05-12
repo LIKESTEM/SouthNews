@@ -1,3 +1,4 @@
+<%@page import="com.southnews.entities.Role"%>
 <%@page import="com.southnews.entities.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +9,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        
     </head>
     <body>
         <%
@@ -46,26 +48,25 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.jsp">Logout</a>
                             </li>
+                                <%
+                                    if(user.getRole() == Role.ADMIN) {
+                                %>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="AdminDashboard.jsp">Dashboard</a>
+                                </li>
+                                <%
+                                    } else if(user.getRole() == Role.JOURNALIST) {
+                                %>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="PostArticle.jsp">Dashboard</a>
+                                </li>
+                                <%
+                                    }
+                                %>
                             <%
                                 }
                             %>
                             
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-primary" type="submit">Search</button>
-                        </form>
                     </div>
                 </div>
             </div>

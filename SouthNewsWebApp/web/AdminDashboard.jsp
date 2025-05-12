@@ -4,6 +4,7 @@
     Author     : thabi
 --%>
 
+<%@page import="java.util.Base64"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="com.southnews.entities.Article, java.util.List" %>
 <%@ page session="true" %>
@@ -14,7 +15,7 @@
         return;
     }
 
-    List<Article> pendingArticles = (List<Article>) request.getAttribute("pendingArticles");
+    List<Article> pendingArticles = (List<Article>) session.getAttribute("pendingArticles");
 %>
 <!DOCTYPE html>
 <html>
@@ -23,30 +24,64 @@
         <title>Admin Dashboard</title>
     </head>
     <body>
-        <h2>Pending Articles for Review</h2>
-        <table border="1">
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Actions</th>
-            </tr>
+        <jsp:include page="AdminNavBar.jsp" />
+        
+        <div class="container mt-5" style="padding-top: 3rem;">
+            <h2 class="text-center mb-4">Pending Articles for Review</h2>
+
             <%
-                for (Article a : pendingArticles) {
+                if(pendingArticles != null && !pendingArticles.isEmpty()) {
             %>
-            <tr>
-                <td><%= a.getTitle() %></td>
-                <td><%= a.getAuthor().getUsername() %></td>
-                <td>
-                    <form action="ApproveArticleServlet.do" method="post" style="display:inline;">
-                        <input type="hidden" name="articleId" value="<%= a.getId() %>" />
-                        <button name="action" value="approve">Approve</button>
-                        <button name="action" value="reject">Reject</button>
-                    </form>
-                </td>
-            </tr>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Title</th>
+                            <th>Content</th>
+                            <th>Category</th>
+                            <th>Image</th>
+                            <th>Status</th>
+                            <th>Created Date</th>
+                            <th>Author</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            for (Article a : pendingArticles) {
+                                String base64 = Base64.getEncoder().encodeToString(a.getImage());
+                                String imagePath = "data:image/jpg;base64," + base64;
+                        %>
+                        <tr>
+                            <td><%= a.getTitle() %></td>
+                            <td><%= a.getContent() %></td>
+                            <td><%= a.getCategory().getName() %></td>
+                            <td><img src="<%=imagePath%>" alt="Related to article image" class="img-thumbnail" style="max-width:100px; max-height:100px;"/></td>
+                            <td><%= a.getStatus().toString() %></td>
+                            <td><%= a.getCreatedAt() %></td>
+                            <td><%= a.getAuthor().getUsername() %></td>
+                            <td>
+                                <form action="ApproveArticleServlet.do" method="post" class="d-flex gap-1">
+                                    <input type="hidden" name="articleId" value="<%=a.getId()%>" />
+                                    <button type="submit" name="action" value="approve" class="btn btn-success btn-sm">Approve</button>
+                                    <button type="submit" name="action" value="reject" class="btn btn-danger btn-sm">Reject</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </tbody>
+                </table>
+            </div>
+            <%
+                } else {
+            %>
+            <p class="text-center alert alert-info">There are no pending articles.</p>
             <%
                 }
             %>
-        </table>
+        </div>
+        
     </body>
 </html>

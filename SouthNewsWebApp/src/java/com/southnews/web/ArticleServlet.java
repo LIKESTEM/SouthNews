@@ -31,7 +31,7 @@ public class ArticleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
-        List<Article> articles = new ArrayList<>();
+        List<Article> articles = afl.getApprovedArticles();
         session.setAttribute("articles", articles);
         request.getRequestDispatcher("home.jsp")
                 .forward(request, response);
