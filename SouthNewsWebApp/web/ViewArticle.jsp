@@ -16,7 +16,7 @@
 <body class="bg-light">
     <jsp:include page="NavBar.jsp" />
 
-    <div class="container py-5" style="padding-top: 12rem;">
+    <div class="container pb-5" style="padding-top: 5rem;">
         <!-- Article Section -->
         <div class="card mb-4 shadow-sm">
             <div class="card-body">

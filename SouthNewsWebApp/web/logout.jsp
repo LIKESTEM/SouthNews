@@ -14,7 +14,7 @@
     <body>
         <jsp:include page="NavBar.jsp" />
         
-        <div class="container mt-5">
+        <div class="container mt-5" style="padding-top: 3rem;">
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title text-center">Logout</h2>

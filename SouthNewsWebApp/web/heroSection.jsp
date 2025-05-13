@@ -12,7 +12,7 @@
     </head>
     <body>
         <!-- Hero Section -->
-        <section class="hero-section bg-primary text-white text-center d-flex flex-column justify-content-center align-items-center py-5 px-3">
+        <section class="hero-section bg-primary text-white text-center d-flex flex-column justify-content-center align-items-center pb-5 px-3" style="padding-top: 5rem;">
             <div class="container">
                 <h1 class="display-4 fw-bold mb-3">Welcome to the SouthNews Platform</h1>
                 <p class="lead mb-4">This is an independent news platform where 

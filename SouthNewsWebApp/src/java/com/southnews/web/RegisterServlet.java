@@ -32,10 +32,10 @@ public class RegisterServlet extends HttpServlet {
         List<User> list = ufl.findAll();
         
         if(list == null || list.isEmpty()) {
-            String username = "Thabiso";
-            String email = "maxride2425@gamil.com";
-            String cellNo = "0638165250";
-            String password = "password@admin";
+            String username = "username";
+            String email = "email_address";
+            String cellNo = "phone_number";
+            String password = "password";
             Role role = Role.ADMIN;
 
             User user = new User(username, email, cellNo, password, role);
